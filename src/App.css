@@ -1,7 +1,17 @@
 .App {
   text-align: center;
 }
-
+.header
+{
+  background-color: #2368c4;
+  text-align: center;
+  font-size: 22px;
+  font-weight:bold;
+  color:white;
+  padding: 1.5rem;
+  letter-spacing:1.3px;
+  margin-bottom: 3%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
