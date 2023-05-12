@@ -1,29 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header/header';
+import Table from './components/Table/LaptopTable'
 
-function App() {
+function App() 
+{
   return (
     <>
-      <div className="header">
-        Tracking   Laptops
-      </div>
-      <SearchBar/>
+      
+        <Header title={"Laptops"} second={"Tracking"}/>
+          <Table/>      
     </>
     
   );
 }
-function SearchBar()
-{
-  return (
-  <>
-    <div class="input-group rounded">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-  <span class="input-group-text border-0" id="search-addon">
-    <i class="fas fa-search"></i>
-  </span>
-</div>
-  </>
-  );
-}
-
 export default App;
