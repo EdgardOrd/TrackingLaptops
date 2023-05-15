@@ -1,26 +1,11 @@
-.header
-{
-  background-color: #2368c4;
-  text-align: center;
-  font-size: 22px;
-  font-weight:bold;
-  color:white;
-  padding: 1.2rem;
-  letter-spacing:1.3px;
-  margin-bottom: 5%;
-}
-.container
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .search-form 
 {
   display: flex;
   justify-content: center;
-  width: 90%;
-  margin-bottom: 4%;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5%;
 }
 .search-input
 {
@@ -32,7 +17,7 @@
 }
 .add-input,.tracking-form
 {
-    width: 12rem;
+    width: 12.5rem;
     height: 2.3rem;
     background: #fff;
     display: flex;
@@ -49,7 +34,7 @@
   border: 3px solid #2368c4;
 }
 .add-input button,.tracking-form button {
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 0.9rem;
   height: 100%;
   width: 100%;
@@ -71,4 +56,31 @@
     padding: 1rem;
     color: white;
     cursor: pointer;
+}
+img
+{
+   width: 25px;
+   height: 25px;
+}
+
+@media screen and (max-width: 650px)
+{
+    .add-input,.tracking-form
+    {
+        width: unset;
+    }
+    .search-input
+    {
+        display: flex;
+        
+    }
+    .tracking,.add{
+        display: none;
+    }
+    .search-form
+    {   
+        margin-top: 7%;
+        margin-bottom: 10%;
+    }
+    
 }

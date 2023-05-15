@@ -1,15 +1,20 @@
-import Header from './components/Header/header';
-import Table from './components/Table/LaptopTable'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Laptops from './pages/Laptops';
+import Tracking from './pages/Tracking';
+
+import './App.css'
+
+
 
 function App() 
 {
-  return (
-    <>
-      
-        <Header title={"Laptops"} second={"Tracking"}/>
-          <Table/>      
-    </>
-    
-  );
+  return <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Laptops/>}></Route>
+      <Route path='Laptops' element={<Laptops/>}></Route>
+      <Route path='Tracking' element={<Tracking/>}></Route>
+    </Routes>
+  </BrowserRouter>
 }
 export default App;

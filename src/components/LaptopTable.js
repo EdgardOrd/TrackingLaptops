@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import './Table.css'
+import '../style/Table.css';
+import { useState,useEffect } from "react";
 
-function Table() {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos/')
-      .then(response => response.json())
-      .then(data => setData(data));
-  }, []);
+function LaptopTable()
+{
+    const [data, setData] = useState([]);
 
-  const headers = Object.keys(data[0] || {});
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos/')
+        .then(response => response.json())
+        .then(data => setData(data));
+    }, []);
+
+   const headers = Object.keys(data[0] || {});
 
   return (
     <table>
@@ -34,4 +36,5 @@ function Table() {
   );
 }
 
-export default Table;
+
+export default LaptopTable;

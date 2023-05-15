@@ -1,7 +1,9 @@
-
+*{
+  font-family: "Outfit", sans-serif;
+}
 .container
 {
-  display: flex;
+  /* display: flex;
+  justify-content: center; */
   align-items: center;
-  justify-content: center;
 }
