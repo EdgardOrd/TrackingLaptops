@@ -1,8 +1,8 @@
 //Hooks
 
 import { useLocation } from 'react-router-dom';
-import { useNavigate }  from 'react-router-dom'; 
-
+import { useNavigate } from 'react-router-dom'; 
+import { useState } from 'react';
 
 //Style 
 import '../style/Nav.css';
@@ -20,6 +20,13 @@ import image3 from "../img/tracking_icon.png";
 
 function Laptops()
 {
+    const [searchText, setSearchText] = useState('');
+
+    // ...
+
+    const handleSearchInputChange = (event) => {
+        setSearchText(event.target.value);
+    };
     const location = useLocation();
     
     const navigate = useNavigate();
@@ -34,24 +41,23 @@ function Laptops()
             <div className="container">
                 <div className="search-form">
                     <div className="search-input">
-                        <input placeholder="Search..." id="search-box"/>
+                        <input placeholder="Search..." value={searchText} onChange={handleSearchInputChange}/>
                         <label htmlFor="search-box"><img src={image2} alt="not found"></img></label>
                     </div>
                     <div className="add-input">
-                        <button className="add" id="add-box">
-                            
-                        Add Laptops
+                        <button className="add" id="add-box">  
+                            Add Laptops
                         </button>
                         <label htmlFor="add-box"><img src={image1} alt="not found"></img></label>
                     </div>
-                    <div className="tracking-form">
+                    <div className="tracking-form" onClick={link}>
                         
-                        <button className="tracking" onClick={link}>Tracking</button>
+                        <button className="tracking" >Tracking</button>
                         <label htmlFor="add-box"><img src={image3} alt="not found"></img></label>
                     </div>
                 </div>
                 
-                <Table/>
+                <Table searchText={searchText}/>
             </div>
             
             

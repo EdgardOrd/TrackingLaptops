@@ -8,7 +8,7 @@ import '../style/Nav.css';
 
 //Components
 import Header from '../components/Header';
-
+import Table from '../components/LaptopTable';
 //Image
 import image1 from "../img/search_icon.png";
 import image2 from "../img/plus_icon.png";
@@ -39,11 +39,12 @@ function Tracking()
                         </button>
                         <label htmlFor="add-box"><img src={image2} alt='Not found'></img></label>
                     </div>
-                    <div className="tracking-form">
-                        <button className="tracking" onClick={link}>Laptops</button>
+                    <div className="tracking-form" onClick={link}>
+                        <button className="tracking" >Laptops</button>
                         <label htmlFor="add-box"><img src={image3} alt='Not found'></img></label>
                     </div>
                 </div>
+                <Table/>
             </div>
         </>
     )
