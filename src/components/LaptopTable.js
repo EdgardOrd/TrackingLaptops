@@ -1,9 +1,6 @@
-// LaptopTable.js
-
-// LaptopTable.js
-
 import React, { useState, useEffect } from 'react';
-import '../style/Table.css'
+import '../style/Table.css';
+
 function LaptopTable({ searchText }) {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);

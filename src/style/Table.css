@@ -20,6 +20,9 @@ th{
     color: white;
     padding: 8px;
 }
+td{
+    padding: 10px;
+}
 tbody tr:nth-child(odd) {
     background-color: white /* Color para las filas impares */
   }
