@@ -22,15 +22,7 @@ function Tracking()
         setSearchText(event.target.value);
     };
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const handleOpenModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
-    };
+    
     
     const location = useLocation();
 
@@ -50,11 +42,7 @@ function Tracking()
                         <label htmlFor="search-box"><img src={image1} alt='Not found'></img></label>
                     </div>
                     <div className="add-input">
-                        <button onClick={handleOpenModal} className="add" id="add-box">
-                            
-                            Add Tracking
-                        </button>
-                        <TrackingModal isOpen={isModalOpen} onClose={handleCloseModal}/>
+                            <TrackingModal/>
                         <label htmlFor="add-box"><img src={image2} alt='Not found'></img></label>
                     </div>
                     <div className="tracking-form" onClick={link}>
