@@ -10,20 +10,16 @@ import TrackingModal from '../components/TrackingModal';
 
 //Image
 import image1 from "../img/search_icon.png";
-import image2 from "../img/plus_icon.png";
 import image3 from "../img/laptop_icon.png";
 
 function Tracking()
 {
-
     const [searchText, setSearchText] = useState('');
     
     const handleSearchInputChange = (event) =>   {
         setSearchText(event.target.value);
     };
 
-    
-    
     const location = useLocation();
 
     const navigate = useNavigate();
@@ -41,12 +37,9 @@ function Tracking()
                         <input placeholder="Search..." id="search-box"  value={searchText} onChange={handleSearchInputChange}/>
                         <label htmlFor="search-box"><img src={image1} alt='Not found'></img></label>
                     </div>
-                    <div className="add-input">
-                            <TrackingModal/>
-                        <label htmlFor="add-box"><img src={image2} alt='Not found'></img></label>
-                    </div>
+                    <TrackingModal/>
                     <div className="tracking-form" onClick={link}>
-                        <button className="tracking" >Laptops</button>
+                        <button className="div-button" >Laptops</button>
                         <label htmlFor="add-box"><img src={image3} alt='Not found'></img></label>
                     </div>
                 </div>
@@ -55,5 +48,4 @@ function Tracking()
         </>
     )
 }
-
 export default Tracking;

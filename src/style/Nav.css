@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
 }
-.add-input,.tracking-form
+.add-input,.tracking-form, .form
 {
     width: 19.3rem;
     height: 2.5rem;
@@ -34,7 +34,7 @@
   background-color:  white;
   border: 3px solid #2368c4;
 }
-.add-input button,.tracking-form button {
+.add-input button,.tracking-form button,.form button {
   /* font-weight: bold; */
   font-size: 0.9rem;
   height: 100%;
@@ -47,7 +47,8 @@
   text-overflow: ellipsis;
 }
 .search-input label, 
-.add-input label, 
+.add-input label,
+.form label, 
 .tracking-form label{
     background-color: #2368c4;
     height: 2.5rem;
@@ -71,7 +72,7 @@
         display: flex;
         
     }
-    .tracking,.add{
+    .div-button{
         display: none;
     }
     .search-form

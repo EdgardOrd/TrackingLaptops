@@ -1,5 +1,4 @@
 //Hooks
-
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'; 
 import { useState } from 'react';
@@ -11,7 +10,7 @@ import '../style/Nav.css';
 //Components
 import Header from '../components/Header';
 import Table from '../components/LaptopTable';
-
+import LaptopModal from '../components/LaptopModal';
 //Image
 import image1 from "../img/plus_icon.png";
 import image2 from "../img/search_icon.png";
@@ -44,15 +43,9 @@ function Laptops()
                         <input placeholder="Search..." value={searchText} onChange={handleSearchInputChange}/>
                         <label htmlFor="search-box"><img src={image2} alt="not found"></img></label>
                     </div>
-                    <div className="add-input">
-                        <button className="add" id="add-box">  
-                            Add Laptops
-                        </button>
-                        <label htmlFor="add-box"><img src={image1} alt="not found"></img></label>
-                    </div>
+                    <LaptopModal/>
                     <div className="tracking-form" onClick={link}>
-                        
-                        <button className="tracking" >Tracking</button>
+                        <button className="div-button" >Tracking</button>
                         <label htmlFor="add-box"><img src={image3} alt="not found"></img></label>
                     </div>
                 </div>

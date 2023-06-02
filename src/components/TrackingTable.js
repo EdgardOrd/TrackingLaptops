@@ -36,6 +36,7 @@ function TrackingTable({ searchText }) {
   const headers = Object.keys(filteredData[0] || {});
 
   return (
+    
     <table className="">
       <thead>
         <tr>
@@ -54,6 +55,7 @@ function TrackingTable({ searchText }) {
         ))}
       </tbody>
     </table>
+    
   );
 }
 

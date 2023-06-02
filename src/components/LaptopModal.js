@@ -8,13 +8,10 @@ import '../style/Modal.css';
 
 import image1 from "../img/save_icon.png";
 import image2 from "../img/laptop_icon.png";
-import image3 from "../img/tracking_icon.png";
+import image3 from "../img/laptop_icon.png";
 import image4 from "../img/plus_icon.png";
 
-
-
-
-function TrackingModal() {
+function LaptopModal() {
   const [show, setShow] = useState(false);
   
   const handleClose = () => setShow(false);
@@ -30,8 +27,8 @@ function TrackingModal() {
     <> 
       {/* x ? a:(xx ? c: b) */}
       <div className="add-input" onClick={handleShow}>
-        <button variant="primary" className="div-button" >
-          Add Tracking
+        <button variant="primary" className="div-button">
+          Add Laptop
         </button>
         <label htmlFor="add-box"><img src={image4} alt='Not found'></img></label>
       </div>
@@ -44,70 +41,66 @@ function TrackingModal() {
         dialogClassName="custom-modal"
       >
         <Modal.Header closeButton className="custom-header">
-          <Modal.Title className="centered-title">Add Tracking</Modal.Title>
+          <Modal.Title className="centered-title">Add Laptop</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div className="modal-body">
           <div className="row mt-3 mb-2">
             <div className="col-lg-4">
-              <label htmlFor="" className="mb-2">Laptop ID : </label>
+              <label htmlFor="" className="mb-2">Serie : </label>
               <input type="text" className="form-control" placeholder=""/>
               <br />
             </div>
-            <div className="col-lg-5">
-              <label htmlFor="" className="mb-2">Employee: </label>
+            <div className="col-lg-2">
+              <label htmlFor="" className="mb-2">Brand: </label>
               <input type="text" className="form-control" placeholder="" />
               <br />
             </div>
             <div className="col-lg-3">
-              <label htmlFor="" className="mb-2">Exit Date: </label>
-              <input type="date" className="form-control"/>
+              <label htmlFor="" className="mb-2">Model: </label>
+              <input type="text" className="form-control"/>
+              <br />
+            </div>
+            <div className="col-lg-3">
+              <label htmlFor="" className="mb-2">Color: </label>
+              <input type="text" className="form-control"/>
               <br />
             </div>
           </div>
-          <div className="row">
-            {/* <div className="col-lg-4">
-              <label htmlFor="">Exit Date: </label>
-              <input type="date" className="form-control"/>
-              <br />
-            </div> */}
-            {/* <div className="col-lg-4 date">
-              <label htmlFor="">Return Date: </label>
-              <input type="date" className="form-control "  />
-              <br />
-            </div> */}
-          </div>
-          {/* <div className="row">
-            <div className="col-lg-4 ">
-              <label htmlFor="">Created at: </label>
-              <input type="date" className="form-control " />
+          <div className="row mt-3 mb-2">
+            <div className="col-lg-6">
+              <label htmlFor="" className="mb-2">Charger : </label>
+              <input type="text" className="form-control" placeholder=""/>
               <br />
             </div>
-            <div className="col-lg-4 date">
-              <label htmlFor="">Updated at: </label>
-              <input type="date" className="form-control " />
+            <div className="col-lg-2">
+              <label htmlFor="" className="mb-2">Guest: </label>
+              <input type="text" className="form-control" placeholder="" />
               <br />
             </div>
-          </div> */}
-          <div className="col-lg-12">
-              <label htmlFor="" className="mb-2">Notes: </label>
-              <input type="text" className="form-control notes"  />
-               <br />
+            <div className="col-lg-3">
+              <label htmlFor="" className="mb-2">State: </label>
+              <input type="text" className="form-control"/>
+              <br />
+            </div>
+           
           </div>
+          
+          
         </div>
         </Modal.Body>
         <Modal.Footer>
         <div className="search-form">
           <div className="form" variant="primary" onClick={handleClose}>
-              <button className="tracking" >Save</button>
+              <button className="Laptop" >Save</button>
               <label htmlFor="add-box"><img src={image1} alt="not found"></img></label>
            </div>
           <div className="form" variant="primary" onClick={link}>
-              <button className="tracking" >Laptops</button>
+              <button className="Laptop" >Laptops</button>
               <label htmlFor="add-box"><img src={image2} alt="not found"></img></label>
            </div>
           <div className="form" variant="primary" onClick={handleClose}>
-              <button className="tracking" >Close</button>
+              <button className="Laptop" >Close</button>
               <label htmlFor="add-box"><img src={image3} alt="not found"></img></label>
            </div>
           </div>
@@ -117,4 +110,4 @@ function TrackingModal() {
   );
 }
   
-export default TrackingModal;
+export default LaptopModal;
