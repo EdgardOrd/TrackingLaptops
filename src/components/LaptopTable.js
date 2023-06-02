@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import '../style/Table.css';
 
-function LaptopTable({ searchText }) {
+function LaptopTable({ searchText, apiUrl }) {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
+    fetch("https://reqres.in/api/unknown")
       .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-        setFilteredData(data); // Mostrar todos los datos sin filtrar inicialmente
+      .then((responseData) => {
+        const apiData = responseData.data || []; // Acceder a la propiedad 'data' o establecer un arreglo vacío por defecto
+        setData(apiData);
+        setFilteredData(apiData); // Mostrar todos los datos sin filtrar inicialmente
       });
-  }, []);
+  }, [apiUrl]);
 
   useEffect(() => {
     const filtered = data.filter((row) => {
@@ -47,10 +48,9 @@ function LaptopTable({ searchText }) {
       <tbody>
         {filteredData.map((row) => (
           <tr key={row.id}>
-            <td>{row.userId}</td>
-            <td>{row.id}</td>
-            <td>{row.title}</td>
-            <td>{row.body}</td>
+            {headers.map((header) => (
+              <td key={header}>{row[header]}</td>
+            ))}
           </tr>
         ))}
       </tbody>
