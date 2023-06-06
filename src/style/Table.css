@@ -1,6 +1,6 @@
 table 
 {
-    width: 87%;
+    width:100%;
     margin-top: 2%;
     margin-bottom: 5%;
     
@@ -29,6 +29,40 @@ tbody tr:nth-child(odd) {
   
   tbody tr:nth-child(even) {
     background-color: #BDD9FF; /* Color para las filas pares */
+  }
+  .table-container {
+    width: 100%;
+    max-width: 1120px; /* Ajusta el tamaño máximo según tus necesidades */
+    margin: 0 auto;
+    overflow-x: auto; /* Ajusta a "scroll" si quieres que aparezca una barra de desplazamiento siempre */
+  }
+  
+  .responsive-table {
+    width: 100%;
+  }
+  .pagination {
+    margin-top: 10px;
+    display: flex;
+  justify-content: center;
+  }
+  
+  .pagination button {
+    background-color: #2368c4;
+    color:white;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #ccc;
+  }
+  
+  .pagination button.active {
+    background-color: #333;
+    color: #fff;
   }
 @media screen and (max-width: 1400px)
 {
