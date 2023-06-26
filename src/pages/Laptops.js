@@ -1,5 +1,4 @@
 //Hooks
-import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'; 
 import { useState } from 'react';
 
@@ -12,7 +11,7 @@ import Header from '../components/Header';
 import Table from '../components/LaptopTable';
 import LaptopModal from '../components/LaptopModal';
 //Image
-import image1 from "../img/plus_icon.png";
+
 import image2 from "../img/search_icon.png";
 import image3 from "../img/tracking_icon.png";
 
@@ -26,7 +25,6 @@ function Laptops()
     const handleSearchInputChange = (event) => {
         setSearchText(event.target.value);
     };
-    const location = useLocation();
     
     const navigate = useNavigate();
 
@@ -36,7 +34,7 @@ function Laptops()
     
     return (
         <>
-            <Header location={location}/>
+            <Header title={"Laptops"}/>
             <div className="container">
                 <div className="search-form">
                     <div className="search-input">

@@ -1,5 +1,5 @@
 //Hooks
-import { useLocation, useNavigate,  } from 'react-router-dom';
+import { useNavigate,  } from 'react-router-dom';
 import { useState } from 'react';
 //Style 
 import '../style/Nav.css';
@@ -20,8 +20,6 @@ function Tracking()
         setSearchText(event.target.value);
     };
 
-    const location = useLocation();
-
     const navigate = useNavigate();
 
     const link = () => {
@@ -30,7 +28,7 @@ function Tracking()
     
     return(
         <>
-            <Header location={location}/>
+            <Header title={"Trackings"}/>
             <div className="container">
                 <div className="search-form">
                     <div className="search-input">

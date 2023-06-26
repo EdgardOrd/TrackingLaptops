@@ -11,7 +11,7 @@ function LaptopTable({ searchText }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("");
+        const response = await fetch("http://tc.crc.global:3001/api/laptops/all");
         if (response.ok) {
           const jsonData = await response.json();
           const apiData = jsonData.data || [];
@@ -58,8 +58,22 @@ function LaptopTable({ searchText }) {
     setCurrentPage(pageNumber);
   };
 
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
+    <>
     <div className="table-container">
+      <div className='table-wrapper'>
       <table className="responsive-table">
         <thead>
           <tr>
@@ -74,7 +88,7 @@ function LaptopTable({ searchText }) {
               {headers.map((header) => (
                 <td key={header}>
                   {header === 'record'
-                    ? moment(row[header]).format('MMMM Do, YYYY')
+                    ? moment(row[header]).utc().format('MMMM Do, YYYY')
                     : row[header]}
                 </td>
               ))}
@@ -82,8 +96,15 @@ function LaptopTable({ searchText }) {
           ))}
         </tbody>
       </table>
-
+      </div>
+    
       <div className="pagination">
+        <button
+          onClick={goToPreviousPage}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
         {Array.from({ length: totalPages }).map((_, index) => (
           <button
             key={index}
@@ -93,8 +114,16 @@ function LaptopTable({ searchText }) {
             {index + 1}
           </button>
         ))}
+        <button
+          onClick={goToNextPage}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
+
 export default LaptopTable;

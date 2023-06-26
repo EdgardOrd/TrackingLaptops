@@ -1,10 +1,8 @@
 import '../style/Header.css';
 
-function Header(props)
+function Header({title})
 {
-    const {location} = props;
-
-    var pageTitle = location.pathname.split('/').pop();
+    let pageTitle = title;
 
     if(pageTitle === "")
     {

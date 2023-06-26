@@ -2,7 +2,7 @@ table
 {
     width:100%;
     margin-top: 2%;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
     
 }
 table th, table td 
@@ -34,16 +34,18 @@ tbody tr:nth-child(odd) {
     width: 100%;
     max-width: 1120px; /* Ajusta el tamaño máximo según tus necesidades */
     margin: 0 auto;
-    overflow-x: auto; /* Ajusta a "scroll" si quieres que aparezca una barra de desplazamiento siempre */
+     /* Ajusta a "scroll" si quieres que aparezca una barra de desplazamiento siempre */
   }
   
   .responsive-table {
     width: 100%;
   }
+  
   .pagination {
-    margin-top: 10px;
+    margin-top: 0px;
     display: flex;
-  justify-content: center;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   
   .pagination button {
@@ -64,12 +66,18 @@ tbody tr:nth-child(odd) {
     background-color: #333;
     color: #fff;
   }
+  .table-wrapper 
+  {
+    height: 570px; /* Establece la altura fija según tus necesidades */
+    overflow-y:auto;
+  }
 @media screen and (max-width: 1400px)
 {
     table 
     {
             width:100%;
             margin-top: 4%;
-            margin-bottom: 10%;     
+            margin-bottom: 60px;     
     }
 }
+
